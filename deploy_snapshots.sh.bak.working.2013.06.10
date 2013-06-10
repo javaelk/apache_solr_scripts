@@ -1,0 +1,106 @@
+#!/bin/bash -x
+TESTSUBJECT="apache_solr_core_snapshots-TM"
+TESTSUBJECT_ALT="apache_solr_core_snapshots"
+SVNLOCAL="$HOME/sir/workspace/apache-solr"
+SVNNAME="solr"
+SVNCHECKOUT=true #set to false when not connection to SVN
+
+echo " this script fetches source from SVN, build and deploy to sir versions.alt directory"
+echo " versions has no code change in solr-core will not be deployed to sir versions.alt "
+
+echo "1 === fetch from SVN"
+
+cd $SVNLOCAL
+
+if $SVNCHECKOUT; then
+
+	svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/solr
+	svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/lucene
+
+	cd $SVNNAME
+	echo "2 === extract version numbers "
+
+	#remove -limit later to see all. 
+	svn log --limit 2 | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../snapshot_build_hashcode.txt
+	cd ..
+fi
+
+cd $SVNLOCAL
+#b is total number of versions
+b=$(more snapshot_build_hashcode.txt | wc -l)
+LASTVERSION=0  #this is to point to the previous version number
+
+#iterate for each version
+while read VER
+do
+	echo "3 === check out version $VER"
+	if $SVNCHECKOUT; then
+		svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/solr -r $VER trunk-$VER
+	fi
+
+	if [ "$LASTVERSION" != 0 ]
+             then 
+             echo "compare version $LASTVERSION with $VER"
+		diff_result=` diff -rbB --brief trunk-$LASTVERSION/core/src/java trunk-$VER/core/src/java `
+		echo "$diff_result"
+		if [ -z "$diff_result" ]
+                     then  #empty means they are the same  
+		     echo "version $VER and $LASTVERSION have no code change in core, skip to next version"
+		     continue
+		fi
+	fi
+	
+        #this VER should be different from LASTVERSION
+
+
+	let " b -=1 "
+	cd trunk-$VER
+
+#checkout a Lucene code match the timestamp of solr revision
+#svn checkout http://svn.apache.org/repos/asf/lucene/dev/trunk/lucene -r {2013-06-07T20:53-0400}
+        echo "3.5 === parse TIMESTAMP of version $VER"
+        echo "TIMESTAMP `svn log -r $VER`"
+	TIMESTAMP=`svn log -r $VER | grep "$VER" | sed 's/^r[0-9]* | [a-zA-Z]* | \(.*\)(.*) | .*$/\1/' |sed 's/\([0-9-]*\) \([0-9]*:[0-9]*\):[0-9]* \(.*\) $/{\1T\2\3}/' `
+        echo "TIMESTAMP of version $VER is $TIMESTAMP"
+
+        cd ..
+        rm -rf lucene
+        svn checkout http://svn.apache.org/repos/asf/lucene/dev/trunk/lucene -r $TIMESTAMP
+
+	cd trunk-$VER
+
+	echo " 4 === build" 
+	if $SVNCHECKOUT; then
+	 ant ivy-bootstrap
+	 ant compile
+	 ant compile-test
+	 ant test
+	 ant dist
+	fi
+
+	echo "5 === beautify" 
+       # ~/sir/workspace/astyle/build/gcc/bin/astyle --style=allman --recursive --suffix=none core/*.java
+
+	echo "6 === deploy r$VER to versions.alt directory as v$b"
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+	mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+
+	echo " copy binary "
+	cp -r build/solr-core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+
+	echo " copy source - only copy source of core"
+	cp -r core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+
+	echo " move lucenelib "
+	mv ../lucenelib $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT
+	cd ..
+
+#TODO: ideally, generate test plan, test execution scripts right here and run it in the loop.
+	LASTVERSION=$VER
+done < snapshot_build_hashcode.txt
+
+
