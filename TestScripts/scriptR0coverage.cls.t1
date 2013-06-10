@@ -5,7 +5,7 @@ VER=v0
 CLASS_DIR="/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/build/classes"
 EXCLUDEDCLASSES=""
 unset CLASSPATH
-CLASSPATH=".:$CLASS_DIR/solr-core/classes/test:$CLASS_DIR/solr-core/classes/java::$CLASS_DIR/solr-core/test::$CLASS_DIR/solr-core/classes/test-files:/home/wliu/sir/$TESTSUBJECT/scripts/TestScripts:/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/lib/*"
+CLASSPATH=".:$CLASS_DIR/solr-core/classes/test:$CLASS_DIR/solr-core/classes/java:$CLASS_DIR/solr-core/test:$CLASS_DIR/solr-core/test-files:/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/lib/*"
 
 export CLASSPATH
 echo $CLASSPATH
