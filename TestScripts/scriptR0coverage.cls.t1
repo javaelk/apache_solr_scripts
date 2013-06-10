@@ -1,0 +1,17 @@
+#!/bin/bash -x
+TESTSUBJECT="apache_solr_core_snapshots-TM"
+TESTSUBJECT_ALT="apache_solr_core_snapshots"
+VER=v0
+CLASS_DIR="/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/build/classes"
+EXCLUDEDCLASSES=""
+unset CLASSPATH
+CLASSPATH=".:$CLASS_DIR/solr-core/classes/test:$CLASS_DIR/solr-core/classes/java::$CLASS_DIR/solr-core/test::$CLASS_DIR/solr-core/classes/test-files:/home/wliu/sir/$TESTSUBJECT/scripts/TestScripts:/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/lib/*"
+
+export CLASSPATH
+echo $CLASSPATH
+
+echo " running test 1"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_withTotalGroupCount $VER
+
+

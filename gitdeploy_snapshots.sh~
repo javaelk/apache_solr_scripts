@@ -1,0 +1,83 @@
+#!/bin/bash -xv
+TESTSUBJECT="apache-solr_snapshots-TM"
+TESTSUBJECT_ALT="apache-solr_snapshots"
+SVNNAME="solr"
+
+echo " this script fetches source from SVN, build and deploy to sir verions.alt directory"
+echo "fetch from SVN" 
+read pause
+cd $HOME/sir/workspace
+ant ivy-bootstrap
+svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/solr
+svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/lucene
+
+#Most of the time, you will start using a Subversion repository by performing a checkout of your project. Checking out a directory
+#from a repository creates a working copy of that directory on your local machine. Unless otherwise specified, this copy contains
+#the youngest (that is, most recently created or modified) versions of the directory and its children found in the Subversion reposit-
+#ory:
+cd $SVNNAME
+ls
+
+echo "extract version numbers "
+read pause
+#remove since later on to get all builds --since='2013-01-01' 
+svn log | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../snapshot_build_hashcode.txt
+cd ..
+
+#b is total number of versions
+b=$(more snapshot_build_hashcode.txt | wc -l)
+
+while read VER
+do
+let " b -=1 "
+
+echo "check out version $VER"
+svn checkout  http://svn.apache.org/repos/asf/lucene/dev/trunk/solr -r $VER trunk-$VER
+cd trunk-$VER
+
+echo " build" 
+ ant compile
+ ant compile-test
+ ant test
+
+#beautify
+#~/sir/workspace/astyle/build/gcc/bin/astyle --style=allman --recursive --suffix=none *.java
+
+#b=0
+#cd /home/wliu/sir/workspace/apache-solr/trunk-1488431
+echo "deploy to versions.alt directory"
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+mkdir $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+
+echo " copy binary "
+cp -r build/contrib $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+cp -r build/solr-core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+cp -r build/solr-solrj $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+cp -r build/solr-test-framework $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
+echo " copy source "
+cp -r core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+cp -r solrj $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+cp -r contrib $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+cp -r test-framework $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
+echo " copy libs"
+cp -r ./core/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./core/src/test-files/solr/collection1/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./test-framework/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./solrj/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/langid/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/analysis-extras/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/uima/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/extraction/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/velocity/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/dataimporthandler/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+cp -r ./contrib/clustering/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+
+
+
+done < snapshot_build_hashcode.txt
+
+

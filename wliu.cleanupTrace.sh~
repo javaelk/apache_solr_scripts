@@ -1,0 +1,21 @@
+#!/bin/bash -xv
+echo "this script will clean up everything"
+
+TESTSUBJECT="jacoco_core_snapshots-TM"
+TESTSUBJECT_ALT="jacoco_core_snapshots"
+GITNAME="jacoco_snapshots"
+
+echo "remove all build class and source files in versions.alt"
+echo "remove all trace results"
+
+for VER in {0..8..1}
+do
+	cd ${experiment_root}/$TESTSUBJECT/traces.alt/CODECOVERAGE/orig
+	rm -rf html/v$VER/*
+	rm -rf v$VER/*
+done
+
+
+
+
+
