@@ -2,13 +2,12 @@
 TESTSUBJECT="apache_solr_core_snapshots-TM"
 TESTSUBJECT_ALT="apache_solr_core_snapshots"
 VER=v0
-CLASS_DIR="/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/build/classes"
 EXCLUDEDCLASSES=""
-unset CLASSPATH
-CLASSPATH=".:$CLASS_DIR/solr-core/classes/test:$CLASS_DIR/solr-core/classes/java:$CLASS_DIR/solr-core/test:$CLASS_DIR/solr-core/test-files:/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/$VER/$TESTSUBJECT_ALT/lib/*"
 
+unset CLASSPATH
+CLASSPATH=".:./build/solr-core/classes/test:./build/solr-core/classes/java:./build/solr-core/test:./build/solr-core/test-files:/home/wliu/sir/$TESTSUBJECT/scripts/TestScripts:./build/lucene-libs/*:./build/solr-test-framework/lucene-libs/lucene-test-framework-5.0-SNAPSHOT.jar:./build/solr-test-framework/solr-test-framework-5.0-SNAPSHOT.jar:./build/solr-core/solr-core-5.0-SNAPSHOT.jar:./build/contrib/solr-cell/solr-cell-5.0-SNAPSHOT.jar:./build/contrib/solr-dataimporthandler/solr-dataimporthandler-5.0-SNAPSHOT.jar:./build/contrib/solr-clustering/solr-clustering-5.0-SNAPSHOT.jar:./build/contrib/solr-langid/solr-langid-5.0-SNAPSHOT.jar:./build/contrib/solr-velocity/solr-velocity-5.0-SNAPSHOT.jar:./build/contrib/solr-dataimporthandler-extras/solr-dataimporthandler-extras-5.0-SNAPSHOT.jar:./build/contrib/solr-uima/lucene-libs/lucene-analyzers-uima-5.0-SNAPSHOT.jar:./build/contrib/solr-uima/solr-uima-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-smartcn-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-stempel-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-icu-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-morfologik-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/solr-analysis-extras-5.0-SNAPSHOT.jar:./build/solr-solrj/solr-solrj-5.0-SNAPSHOT.jar:./dist/solrj-lib/*:./dist/test-framework/lucene-libs/lucene-test-framework-5.0-SNAPSHOT.jar:./dist/test-framework/lib/*:./dist/solr-dataimporthandler-5.0-SNAPSHOT.jar:./dist/solr-cell-5.0-SNAPSHOT.jar:./dist/solr-langid-5.0-SNAPSHOT.jar:./dist/solr-analysis-extras-5.0-SNAPSHOT.jar:./dist/solr-dataimporthandler-extras-5.0-SNAPSHOT.jar:./dist/solr-velocity-5.0-SNAPSHOT.jar:./dist/solr-solrj-5.0-SNAPSHOT.jar:./dist/solr-test-framework-5.0-SNAPSHOT.jar:./dist/solr-clustering-5.0-SNAPSHOT.jar:./dist/solr-uima-5.0-SNAPSHOT.jar:./core/lib/*:./example/lib/*"
 export CLASSPATH
-echo $CLASSPATH
+
 echo " running test 1"
 java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic> $experiment_root/$TESTSUBJECT/outputs/t1 2>&1
 $experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic $VER
