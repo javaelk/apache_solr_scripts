@@ -130,6 +130,7 @@ do
 	cp ./dist/solr-clustering-5.0-SNAPSHOT.jar $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
 	cp ./dist/solr-uima-5.0-SNAPSHOT.jar $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
 	cp ./core/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
+	cp ./example/lib/* $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/lib
 
 	cd ..
 

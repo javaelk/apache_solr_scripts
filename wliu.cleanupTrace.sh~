@@ -1,11 +1,9 @@
 #!/bin/bash -xv
-echo "this script will clean up everything"
+echo "this script will clean up after test execution"
 
-TESTSUBJECT="jacoco_core_snapshots-TM"
-TESTSUBJECT_ALT="jacoco_core_snapshots"
-GITNAME="jacoco_snapshots"
+TESTSUBJECT="apache_solr_core_snapshots-TM"
+TESTSUBJECT_ALT="apache_solr_core_snapshots"
 
-echo "remove all build class and source files in versions.alt"
 echo "remove all trace results"
 
 for VER in {0..8..1}
@@ -15,6 +13,7 @@ do
 	rm -rf v$VER/*
 done
 
+rm ${experiment_root}/$TESTSUBJECT/outputs/*
 
 
 

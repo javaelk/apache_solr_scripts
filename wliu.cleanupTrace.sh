@@ -13,7 +13,7 @@ do
 	rm -rf v$VER/*
 done
 
-rm ${experiment_root}/$TESTSUBJECT/outputs/*
+rm -rf ${experiment_root}/$TESTSUBJECT/outputs/*
 
 
 
