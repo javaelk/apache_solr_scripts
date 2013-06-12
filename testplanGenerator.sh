@@ -8,7 +8,7 @@ echo $PATH
 #Its also worth noting that when you use the  java -jar command line option to run your Java program as an executable JAR, then the CLASSPATH environment variable will be ignored, and also the -cp and -classpath switches will be ignored.
 #http://stackoverflow.com/questions/219585/setting-multiple-jars-in-java-classpath
 
-for VER in {0..1}
+for VER in {0..19}
 do
 CLASS_DIR="/home/wliu/sir/$TESTSUBJECT/versions.alt/orig/v$VER/$TESTSUBJECT_ALT/build/classes"
 echo $CLASS_DIR

@@ -6,7 +6,7 @@ EXCLUDEDCLASSES=""
 unset CLASSPATH
 CLASSPATH=".:./build/solr-core/classes/test:./build/solr-core/classes/java:./build/solr-core/test:./build/solr-core/test-files:/home/wliu/sir/$TESTSUBJECT/scripts/TestScripts:./build/solr-test-framework/lucene-libs/lucene-test-framework-5.0-SNAPSHOT.jar:./build/solr-test-framework/solr-test-framework-5.0-SNAPSHOT.jar:./build/lucene-libs/*:./build/solr-core/solr-core-5.0-SNAPSHOT.jar:./build/contrib/solr-cell/solr-cell-5.0-SNAPSHOT.jar:./build/contrib/solr-dataimporthandler/solr-dataimporthandler-5.0-SNAPSHOT.jar:./build/contrib/solr-clustering/solr-clustering-5.0-SNAPSHOT.jar:./build/contrib/solr-langid/solr-langid-5.0-SNAPSHOT.jar:./build/contrib/solr-velocity/solr-velocity-5.0-SNAPSHOT.jar:./build/contrib/solr-dataimporthandler-extras/solr-dataimporthandler-extras-5.0-SNAPSHOT.jar:./build/contrib/solr-uima/lucene-libs/lucene-analyzers-uima-5.0-SNAPSHOT.jar:./build/contrib/solr-uima/solr-uima-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-smartcn-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-stempel-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-icu-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/lucene-libs/lucene-analyzers-morfologik-5.0-SNAPSHOT.jar:./build/contrib/solr-analysis-extras/solr-analysis-extras-5.0-SNAPSHOT.jar:./build/solr-solrj/solr-solrj-5.0-SNAPSHOT.jar:./dist/solrj-lib/*:./dist/test-framework/lib/*:./dist/solr-dataimporthandler-5.0-SNAPSHOT.jar:./dist/solr-cell-5.0-SNAPSHOT.jar:./dist/solr-langid-5.0-SNAPSHOT.jar:./dist/solr-analysis-extras-5.0-SNAPSHOT.jar:./dist/solr-dataimporthandler-extras-5.0-SNAPSHOT.jar:./dist/solr-velocity-5.0-SNAPSHOT.jar:./dist/solr-solrj-5.0-SNAPSHOT.jar:./dist/solr-clustering-5.0-SNAPSHOT.jar:./dist/solr-uima-5.0-SNAPSHOT.jar:./core/lib/*:./example/lib/*"
 export CLASSPATH
-VER=v1
+VER=v19
 echo " running test 1"
 java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.EchoParamsTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t1 2>&1
 $experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.EchoParamsTest.test $VER
@@ -1632,1106 +1632,1142 @@ java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=exclude
 $experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testDropBuffered $VER
 
 echo " running test 407"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testBufferingFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t407 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testBufferingFlags $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t407 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testReload $VER
 
 echo " running test 408"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testVersionsOnRestart> $experiment_root/$TESTSUBJECT/outputs/$VER/t408 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testVersionsOnRestart $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testBufferingFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t408 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testBufferingFlags $VER
 
 echo " running test 409"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testCleanShutdown> $experiment_root/$TESTSUBJECT/outputs/$VER/t409 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testCleanShutdown $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testVersionsOnRestart> $experiment_root/$TESTSUBJECT/outputs/$VER/t409 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testVersionsOnRestart $VER
 
 echo " running test 410"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testRemoveOldLogs> $experiment_root/$TESTSUBJECT/outputs/$VER/t410 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testRemoveOldLogs $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testCleanShutdown> $experiment_root/$TESTSUBJECT/outputs/$VER/t410 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testCleanShutdown $VER
 
 echo " running test 411"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testTruncatedLog> $experiment_root/$TESTSUBJECT/outputs/$VER/t411 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testTruncatedLog $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testRemoveOldLogs> $experiment_root/$TESTSUBJECT/outputs/$VER/t411 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testRemoveOldLogs $VER
 
 echo " running test 412"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testCorruptLog> $experiment_root/$TESTSUBJECT/outputs/$VER/t412 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testCorruptLog $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testTruncatedLog> $experiment_root/$TESTSUBJECT/outputs/$VER/t412 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testTruncatedLog $VER
 
 echo " running test 413"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testRecoveryMultipleLogs> $experiment_root/$TESTSUBJECT/outputs/$VER/t413 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testRecoveryMultipleLogs $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testCorruptLog> $experiment_root/$TESTSUBJECT/outputs/$VER/t413 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testCorruptLog $VER
 
 echo " running test 414"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testHaversine> $experiment_root/$TESTSUBJECT/outputs/$VER/t414 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testHaversine $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestRecovery.testRecoveryMultipleLogs> $experiment_root/$TESTSUBJECT/outputs/$VER/t414 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestRecovery.testRecoveryMultipleLogs $VER
 
 echo " running test 415"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testLatLon> $experiment_root/$TESTSUBJECT/outputs/$VER/t415 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testLatLon $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testHaversine> $experiment_root/$TESTSUBJECT/outputs/$VER/t415 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testHaversine $VER
 
 echo " running test 416"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testVector> $experiment_root/$TESTSUBJECT/outputs/$VER/t416 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testVector $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testLatLon> $experiment_root/$TESTSUBJECT/outputs/$VER/t416 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testLatLon $VER
 
 echo " running test 417"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t417 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFunctions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.distance.DistanceFunctionTest.testVector> $experiment_root/$TESTSUBJECT/outputs/$VER/t417 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.distance.DistanceFunctionTest.testVector $VER
 
 echo " running test 418"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalField> $experiment_root/$TESTSUBJECT/outputs/$VER/t418 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalField $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t418 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFunctions $VER
 
 echo " running test 419"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldStringKeys> $experiment_root/$TESTSUBJECT/outputs/$VER/t419 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldStringKeys $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalField> $experiment_root/$TESTSUBJECT/outputs/$VER/t419 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalField $VER
 
 echo " running test 420"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldNumericKey> $experiment_root/$TESTSUBJECT/outputs/$VER/t420 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldNumericKey $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldStringKeys> $experiment_root/$TESTSUBJECT/outputs/$VER/t420 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldStringKeys $VER
 
 echo " running test 421"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testGeneral> $experiment_root/$TESTSUBJECT/outputs/$VER/t421 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testGeneral $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldNumericKey> $experiment_root/$TESTSUBJECT/outputs/$VER/t421 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFileFieldNumericKey $VER
 
 echo " running test 422"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testSortByFunc> $experiment_root/$TESTSUBJECT/outputs/$VER/t422 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testSortByFunc $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testGeneral> $experiment_root/$TESTSUBJECT/outputs/$VER/t422 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testGeneral $VER
 
 echo " running test 423"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testDegreeRads> $experiment_root/$TESTSUBJECT/outputs/$VER/t423 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testDegreeRads $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testSortByFunc> $experiment_root/$TESTSUBJECT/outputs/$VER/t423 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testSortByFunc $VER
 
 echo " running test 424"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testStrDistance> $experiment_root/$TESTSUBJECT/outputs/$VER/t424 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testStrDistance $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testDegreeRads> $experiment_root/$TESTSUBJECT/outputs/$VER/t424 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testDegreeRads $VER
 
 echo " running test 425"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFuncs> $experiment_root/$TESTSUBJECT/outputs/$VER/t425 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFuncs $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testStrDistance> $experiment_root/$TESTSUBJECT/outputs/$VER/t425 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testStrDistance $VER
 
 echo " running test 426"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFieldValueSourceParser> $experiment_root/$TESTSUBJECT/outputs/$VER/t426 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFieldValueSourceParser $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFuncs> $experiment_root/$TESTSUBJECT/outputs/$VER/t426 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFuncs $VER
 
 echo " running test 427"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFieldValueSourceParser> $experiment_root/$TESTSUBJECT/outputs/$VER/t427 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFieldValueSourceParser $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testExternalFieldValueSourceParser> $experiment_root/$TESTSUBJECT/outputs/$VER/t427 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testExternalFieldValueSourceParser $VER
 
 echo " running test 428"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testBooleanFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t428 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testBooleanFunctions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testFieldValueSourceParser> $experiment_root/$TESTSUBJECT/outputs/$VER/t428 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testFieldValueSourceParser $VER
 
 echo " running test 429"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testPseudoFieldFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t429 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testPseudoFieldFunctions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testBooleanFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t429 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testBooleanFunctions $VER
 
 echo " running test 430"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestStressRecovery.testStressRecovery> $experiment_root/$TESTSUBJECT/outputs/$VER/t430 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestStressRecovery.testStressRecovery $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.function.TestFunctionQuery.testPseudoFieldFunctions> $experiment_root/$TESTSUBJECT/outputs/$VER/t430 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.function.TestFunctionQuery.testPseudoFieldFunctions $VER
 
 echo " running test 431"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testPrefixCaseAccentFolding> $experiment_root/$TESTSUBJECT/outputs/$VER/t431 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testPrefixCaseAccentFolding $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestStressRecovery.testStressRecovery> $experiment_root/$TESTSUBJECT/outputs/$VER/t431 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestStressRecovery.testStressRecovery $VER
 
 echo " running test 432"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testWildcardCaseAccentFolding> $experiment_root/$TESTSUBJECT/outputs/$VER/t432 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testWildcardCaseAccentFolding $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testPrefixCaseAccentFolding> $experiment_root/$TESTSUBJECT/outputs/$VER/t432 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testPrefixCaseAccentFolding $VER
 
 echo " running test 433"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testLowerTokenizer> $experiment_root/$TESTSUBJECT/outputs/$VER/t433 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testLowerTokenizer $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testWildcardCaseAccentFolding> $experiment_root/$TESTSUBJECT/outputs/$VER/t433 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testWildcardCaseAccentFolding $VER
 
 echo " running test 434"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testFuzzy> $experiment_root/$TESTSUBJECT/outputs/$VER/t434 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testFuzzy $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testLowerTokenizer> $experiment_root/$TESTSUBJECT/outputs/$VER/t434 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testLowerTokenizer $VER
 
 echo " running test 435"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRegex> $experiment_root/$TESTSUBJECT/outputs/$VER/t435 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRegex $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testFuzzy> $experiment_root/$TESTSUBJECT/outputs/$VER/t435 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testFuzzy $VER
 
 echo " running test 436"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testGeneral> $experiment_root/$TESTSUBJECT/outputs/$VER/t436 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testGeneral $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRegex> $experiment_root/$TESTSUBJECT/outputs/$VER/t436 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRegex $VER
 
 echo " running test 437"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testPhrase> $experiment_root/$TESTSUBJECT/outputs/$VER/t437 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testPhrase $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testGeneral> $experiment_root/$TESTSUBJECT/outputs/$VER/t437 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testGeneral $VER
 
 echo " running test 438"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testWildcardRange> $experiment_root/$TESTSUBJECT/outputs/$VER/t438 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testWildcardRange $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testPhrase> $experiment_root/$TESTSUBJECT/outputs/$VER/t438 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testPhrase $VER
 
 echo " running test 439"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testCharFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t439 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testCharFilter $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testWildcardRange> $experiment_root/$TESTSUBJECT/outputs/$VER/t439 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testWildcardRange $VER
 
 echo " running test 440"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRangeQuery> $experiment_root/$TESTSUBJECT/outputs/$VER/t440 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRangeQuery $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testCharFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t440 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testCharFilter $VER
 
 echo " running test 441"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testNonTextTypes> $experiment_root/$TESTSUBJECT/outputs/$VER/t441 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testNonTextTypes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRangeQuery> $experiment_root/$TESTSUBJECT/outputs/$VER/t441 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRangeQuery $VER
 
 echo " running test 442"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testMultiBad> $experiment_root/$TESTSUBJECT/outputs/$VER/t442 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testMultiBad $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testNonTextTypes> $experiment_root/$TESTSUBJECT/outputs/$VER/t442 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testNonTextTypes $VER
 
 echo " running test 443"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testGreek> $experiment_root/$TESTSUBJECT/outputs/$VER/t443 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testGreek $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testMultiBad> $experiment_root/$TESTSUBJECT/outputs/$VER/t443 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testMultiBad $VER
 
 echo " running test 444"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRussian> $experiment_root/$TESTSUBJECT/outputs/$VER/t444 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRussian $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testGreek> $experiment_root/$TESTSUBJECT/outputs/$VER/t444 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testGreek $VER
 
 echo " running test 445"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeDecayParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t445 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeDecayParams $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestFoldingMultitermQuery.testRussian> $experiment_root/$TESTSUBJECT/outputs/$VER/t445 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestFoldingMultitermQuery.testRussian $VER
 
 echo " running test 446"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t446 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testSimple $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeDecayParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t446 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeDecayParams $VER
 
 echo " running test 447"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testItemOrdering> $experiment_root/$TESTSUBJECT/outputs/$VER/t447 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testItemOrdering $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t447 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testSimple $VER
 
 echo " running test 448"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeDecay> $experiment_root/$TESTSUBJECT/outputs/$VER/t448 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeDecay $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testItemOrdering> $experiment_root/$TESTSUBJECT/outputs/$VER/t448 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testItemOrdering $VER
 
 echo " running test 449"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeNoDecay> $experiment_root/$TESTSUBJECT/outputs/$VER/t449 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeNoDecay $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeDecay> $experiment_root/$TESTSUBJECT/outputs/$VER/t449 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeDecay $VER
 
 echo " running test 450"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic> $experiment_root/$TESTSUBJECT/outputs/$VER/t450 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.search.TestLFUCache.testTimeNoDecay> $experiment_root/$TESTSUBJECT/outputs/$VER/t450 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.search.TestLFUCache.testTimeNoDecay $VER
 
 echo " running test 451"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_withTotalGroupCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t451 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_withTotalGroupCount $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic> $experiment_root/$TESTSUBJECT/outputs/$VER/t451 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basic $VER
 
 echo " running test 452"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basicWithGroupSortEqualToSort> $experiment_root/$TESTSUBJECT/outputs/$VER/t452 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basicWithGroupSortEqualToSort $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_withTotalGroupCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t452 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_withTotalGroupCount $VER
 
 echo " running test 453"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingWeight> $experiment_root/$TESTSUBJECT/outputs/$VER/t453 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingWeight $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basicWithGroupSortEqualToSort> $experiment_root/$TESTSUBJECT/outputs/$VER/t453 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingScore_basicWithGroupSortEqualToSort $VER
 
 echo " running test 454"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsException> $experiment_root/$TESTSUBJECT/outputs/$VER/t454 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsException $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupSortingWeight> $experiment_root/$TESTSUBJECT/outputs/$VER/t454 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupSortingWeight $VER
 
 echo " running test 455"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatStartBiggerThanRows> $experiment_root/$TESTSUBJECT/outputs/$VER/t455 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatStartBiggerThanRows $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsException> $experiment_root/$TESTSUBJECT/outputs/$VER/t455 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsException $VER
 
 echo " running test 456"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsExceptionWithJavaBin> $experiment_root/$TESTSUBJECT/outputs/$VER/t456 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsExceptionWithJavaBin $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatStartBiggerThanRows> $experiment_root/$TESTSUBJECT/outputs/$VER/t456 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatStartBiggerThanRows $VER
 
 echo " running test 457"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingWithTimeAllowed> $experiment_root/$TESTSUBJECT/outputs/$VER/t457 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingWithTimeAllowed $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsExceptionWithJavaBin> $experiment_root/$TESTSUBJECT/outputs/$VER/t457 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSimpleFormatArrayIndexOutOfBoundsExceptionWithJavaBin $VER
 
 echo " running test 458"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSortByFunction> $experiment_root/$TESTSUBJECT/outputs/$VER/t458 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSortByFunction $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingWithTimeAllowed> $experiment_root/$TESTSUBJECT/outputs/$VER/t458 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingWithTimeAllowed $VER
 
 echo " running test 459"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFaceting> $experiment_root/$TESTSUBJECT/outputs/$VER/t459 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFaceting $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingSortByFunction> $experiment_root/$TESTSUBJECT/outputs/$VER/t459 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingSortByFunction $VER
 
 echo " running test 460"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFacetingWithTaggedFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t460 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFacetingWithTaggedFilter $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFaceting> $experiment_root/$TESTSUBJECT/outputs/$VER/t460 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFaceting $VER
 
 echo " running test 461"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupAPI> $experiment_root/$TESTSUBJECT/outputs/$VER/t461 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupAPI $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFacetingWithTaggedFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t461 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupingGroupedBasedFacetingWithTaggedFilter $VER
 
 echo " running test 462"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testRandomGrouping> $experiment_root/$TESTSUBJECT/outputs/$VER/t462 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testRandomGrouping $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testGroupAPI> $experiment_root/$TESTSUBJECT/outputs/$VER/t462 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testGroupAPI $VER
 
 echo " running test 463"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SolrTestCaseJ4Test.testCorrectCore> $experiment_root/$TESTSUBJECT/outputs/$VER/t463 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SolrTestCaseJ4Test.testCorrectCore $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestGroupingSearch.testRandomGrouping> $experiment_root/$TESTSUBJECT/outputs/$VER/t463 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestGroupingSearch.testRandomGrouping $VER
 
 echo " running test 464"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t464 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.test $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SolrTestCaseJ4Test.testCorrectCore> $experiment_root/$TESTSUBJECT/outputs/$VER/t464 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SolrTestCaseJ4Test.testCorrectCore $VER
 
 echo " running test 465"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testSpecialChars> $experiment_root/$TESTSUBJECT/outputs/$VER/t465 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testSpecialChars $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t465 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.test $VER
 
 echo " running test 466"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testUnicode> $experiment_root/$TESTSUBJECT/outputs/$VER/t466 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testUnicode $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testSpecialChars> $experiment_root/$TESTSUBJECT/outputs/$VER/t466 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testSpecialChars $VER
 
 echo " running test 467"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testMultipleClauses> $experiment_root/$TESTSUBJECT/outputs/$VER/t467 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testMultipleClauses $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testUnicode> $experiment_root/$TESTSUBJECT/outputs/$VER/t467 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testUnicode $VER
 
 echo " running test 468"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testRequiredOrProhibitedFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t468 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testRequiredOrProhibitedFlags $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testMultipleClauses> $experiment_root/$TESTSUBJECT/outputs/$VER/t468 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testMultipleClauses $VER
 
 echo " running test 469"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testComparator> $experiment_root/$TESTSUBJECT/outputs/$VER/t469 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testComparator $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellingQueryConverterTest.testRequiredOrProhibitedFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t469 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellingQueryConverterTest.testRequiredOrProhibitedFlags $VER
 
 echo " running test 470"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testSpelling> $experiment_root/$TESTSUBJECT/outputs/$VER/t470 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testSpelling $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testComparator> $experiment_root/$TESTSUBJECT/outputs/$VER/t470 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testComparator $VER
 
 echo " running test 471"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testExtendedResults> $experiment_root/$TESTSUBJECT/outputs/$VER/t471 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testExtendedResults $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testSpelling> $experiment_root/$TESTSUBJECT/outputs/$VER/t471 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testSpelling $VER
 
 echo " running test 472"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateDistance> $experiment_root/$TESTSUBJECT/outputs/$VER/t472 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateDistance $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testExtendedResults> $experiment_root/$TESTSUBJECT/outputs/$VER/t472 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testExtendedResults $VER
 
 echo " running test 473"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateLocation> $experiment_root/$TESTSUBJECT/outputs/$VER/t473 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateLocation $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateDistance> $experiment_root/$TESTSUBJECT/outputs/$VER/t473 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateDistance $VER
 
 echo " running test 474"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t474 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.test $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateLocation> $experiment_root/$TESTSUBJECT/outputs/$VER/t474 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.IndexBasedSpellCheckerTest.testAlternateLocation $VER
 
 echo " running test 475"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.testFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t475 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.testFieldType $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t475 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.test $VER
 
 echo " running test 476"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.testRAMDirectory> $experiment_root/$TESTSUBJECT/outputs/$VER/t476 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.testRAMDirectory $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.testFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t476 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.testFieldType $VER
 
 echo " running test 477"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testScalability> $experiment_root/$TESTSUBJECT/outputs/$VER/t477 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testScalability $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.FileBasedSpellCheckerTest.testRAMDirectory> $experiment_root/$TESTSUBJECT/outputs/$VER/t477 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.FileBasedSpellCheckerTest.testRAMDirectory $VER
 
 echo " running test 478"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testSpellPossibilityIterator> $experiment_root/$TESTSUBJECT/outputs/$VER/t478 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testSpellPossibilityIterator $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testScalability> $experiment_root/$TESTSUBJECT/outputs/$VER/t478 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testScalability $VER
 
 echo " running test 479"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testOverlappingTokens> $experiment_root/$TESTSUBJECT/outputs/$VER/t479 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testOverlappingTokens $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testSpellPossibilityIterator> $experiment_root/$TESTSUBJECT/outputs/$VER/t479 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testSpellPossibilityIterator $VER
 
 echo " running test 480"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t480 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testSuggestions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellPossibilityIteratorTest.testOverlappingTokens> $experiment_root/$TESTSUBJECT/outputs/$VER/t480 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellPossibilityIteratorTest.testOverlappingTokens $VER
 
 echo " running test 481"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t481 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testReload $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t481 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testSuggestions $VER
 
 echo " running test 482"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t482 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testRebuild $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t482 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testReload $VER
 
 echo " running test 483"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t483 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testSuggestions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterFSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t483 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterFSTTest.testRebuild $VER
 
 echo " running test 484"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t484 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testReload $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t484 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testSuggestions $VER
 
 echo " running test 485"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t485 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testRebuild $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t485 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testReload $VER
 
 echo " running test 486"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t486 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testSuggestions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t486 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTest.testRebuild $VER
 
 echo " running test 487"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t487 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testReload $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t487 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testSuggestions $VER
 
 echo " running test 488"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t488 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testRebuild $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t488 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testReload $VER
 
 echo " running test 489"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t489 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testSuggestions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterWFSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t489 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterWFSTTest.testRebuild $VER
 
 echo " running test 490"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t490 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testReload $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testSuggestions> $experiment_root/$TESTSUBJECT/outputs/$VER/t490 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testSuggestions $VER
 
 echo " running test 491"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t491 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testRebuild $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t491 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testReload $VER
 
 echo " running test 492"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollationWithHypens> $experiment_root/$TESTSUBJECT/outputs/$VER/t492 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollationWithHypens $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.suggest.SuggesterTSTTest.testRebuild> $experiment_root/$TESTSUBJECT/outputs/$VER/t492 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.suggest.SuggesterTSTTest.testRebuild $VER
 
 echo " running test 493"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t493 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithFilter $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollationWithHypens> $experiment_root/$TESTSUBJECT/outputs/$VER/t493 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollationWithHypens $VER
 
 echo " running test 494"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithMultipleRequestHandlers> $experiment_root/$TESTSUBJECT/outputs/$VER/t494 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithMultipleRequestHandlers $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithFilter> $experiment_root/$TESTSUBJECT/outputs/$VER/t494 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithFilter $VER
 
 echo " running test 495"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testExtendedCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t495 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testExtendedCollate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithMultipleRequestHandlers> $experiment_root/$TESTSUBJECT/outputs/$VER/t495 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithMultipleRequestHandlers $VER
 
 echo " running test 496"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithGrouping> $experiment_root/$TESTSUBJECT/outputs/$VER/t496 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithGrouping $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testExtendedCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t496 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testExtendedCollate $VER
 
 echo " running test 497"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testContextSensitiveCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t497 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testContextSensitiveCollate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithGrouping> $experiment_root/$TESTSUBJECT/outputs/$VER/t497 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testCollateWithGrouping $VER
 
 echo " running test 498"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testEstimatedHitCounts> $experiment_root/$TESTSUBJECT/outputs/$VER/t498 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testEstimatedHitCounts $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testContextSensitiveCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t498 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testContextSensitiveCollate $VER
 
 echo " running test 499"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.DirectSolrSpellCheckerTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t499 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.DirectSolrSpellCheckerTest.test $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.SpellCheckCollatorTest.testEstimatedHitCounts> $experiment_root/$TESTSUBJECT/outputs/$VER/t499 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.SpellCheckCollatorTest.testEstimatedHitCounts $VER
 
 echo " running test 500"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.DirectSolrSpellCheckerTest.testOnlyMorePopularWithExtendedResults> $experiment_root/$TESTSUBJECT/outputs/$VER/t500 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.DirectSolrSpellCheckerTest.testOnlyMorePopularWithExtendedResults $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.DirectSolrSpellCheckerTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t500 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.DirectSolrSpellCheckerTest.test $VER
 
 echo " running test 501"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testStandAlone> $experiment_root/$TESTSUBJECT/outputs/$VER/t501 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testStandAlone $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.DirectSolrSpellCheckerTest.testOnlyMorePopularWithExtendedResults> $experiment_root/$TESTSUBJECT/outputs/$VER/t501 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.DirectSolrSpellCheckerTest.testOnlyMorePopularWithExtendedResults $VER
 
 echo " running test 502"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testInConjunction> $experiment_root/$TESTSUBJECT/outputs/$VER/t502 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testInConjunction $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testStandAlone> $experiment_root/$TESTSUBJECT/outputs/$VER/t502 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testStandAlone $VER
 
 echo " running test 503"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t503 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testCollate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testInConjunction> $experiment_root/$TESTSUBJECT/outputs/$VER/t503 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testInConjunction $VER
 
 echo " running test 504"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.TestUpdate.testUpdateableDocs> $experiment_root/$TESTSUBJECT/outputs/$VER/t504 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.TestUpdate.testUpdateableDocs $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t504 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.spelling.WordBreakSolrSpellCheckerTest.testCollate $VER
 
 echo " running test 505"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitByPaths> $experiment_root/$TESTSUBJECT/outputs/$VER/t505 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitByPaths $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.TestUpdate.testUpdateableDocs> $experiment_root/$TESTSUBJECT/outputs/$VER/t505 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.TestUpdate.testUpdateableDocs $VER
 
 echo " running test 506"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitByCores> $experiment_root/$TESTSUBJECT/outputs/$VER/t506 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitByCores $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitByPaths> $experiment_root/$TESTSUBJECT/outputs/$VER/t506 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitByPaths $VER
 
 echo " running test 507"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitAlternately> $experiment_root/$TESTSUBJECT/outputs/$VER/t507 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitAlternately $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitByCores> $experiment_root/$TESTSUBJECT/outputs/$VER/t507 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitByCores $VER
 
 echo " running test 508"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testBuildDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t508 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testBuildDocument $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexSplitterTest.testSplitAlternately> $experiment_root/$TESTSUBJECT/outputs/$VER/t508 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexSplitterTest.testSplitAlternately $VER
 
 echo " running test 509"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testNullField> $experiment_root/$TESTSUBJECT/outputs/$VER/t509 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testNullField $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testBuildDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t509 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testBuildDocument $VER
 
 echo " running test 510"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testExceptions> $experiment_root/$TESTSUBJECT/outputs/$VER/t510 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testExceptions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testNullField> $experiment_root/$TESTSUBJECT/outputs/$VER/t510 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testNullField $VER
 
 echo " running test 511"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testMultiField> $experiment_root/$TESTSUBJECT/outputs/$VER/t511 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testMultiField $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testExceptions> $experiment_root/$TESTSUBJECT/outputs/$VER/t511 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testExceptions $VER
 
 echo " running test 512"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithDocumentBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t512 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithDocumentBoost $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testMultiField> $experiment_root/$TESTSUBJECT/outputs/$VER/t512 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testMultiField $VER
 
 echo " running test 513"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithFieldBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t513 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithFieldBoost $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithDocumentBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t513 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithDocumentBoost $VER
 
 echo " running test 514"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndFieldBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t514 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndFieldBoost $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithFieldBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t514 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testCopyFieldWithFieldBoost $VER
 
 echo " running test 515"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndDocumentBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t515 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndDocumentBoost $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndFieldBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t515 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndFieldBoost $VER
 
 echo " running test 516"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexConfigTest.testFailingSolrIndexConfigCreation> $experiment_root/$TESTSUBJECT/outputs/$VER/t516 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexConfigTest.testFailingSolrIndexConfigCreation $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndDocumentBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t516 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DocumentBuilderTest.testWithPolyFieldsAndDocumentBoost $VER
 
 echo " running test 517"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexConfigTest.testTieredMPSolrIndexConfigCreation> $experiment_root/$TESTSUBJECT/outputs/$VER/t517 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexConfigTest.testTieredMPSolrIndexConfigCreation $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexConfigTest.testFailingSolrIndexConfigCreation> $experiment_root/$TESTSUBJECT/outputs/$VER/t517 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexConfigTest.testFailingSolrIndexConfigCreation $VER
 
 echo " running test 518"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testNoBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t518 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testNoBoost $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.SolrIndexConfigTest.testTieredMPSolrIndexConfigCreation> $experiment_root/$TESTSUBJECT/outputs/$VER/t518 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.SolrIndexConfigTest.testTieredMPSolrIndexConfigCreation $VER
 
 echo " running test 519"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testDeboostOld> $experiment_root/$TESTSUBJECT/outputs/$VER/t519 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testDeboostOld $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testNoBoost> $experiment_root/$TESTSUBJECT/outputs/$VER/t519 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testNoBoost $VER
 
 echo " running test 520"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testBoostGood> $experiment_root/$TESTSUBJECT/outputs/$VER/t520 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testBoostGood $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testDeboostOld> $experiment_root/$TESTSUBJECT/outputs/$VER/t520 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testDeboostOld $VER
 
 echo " running test 521"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testTwoRules> $experiment_root/$TESTSUBJECT/outputs/$VER/t521 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testTwoRules $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testBoostGood> $experiment_root/$TESTSUBJECT/outputs/$VER/t521 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testBoostGood $VER
 
 echo " running test 522"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeAllFieldsDetection> $experiment_root/$TESTSUBJECT/outputs/$VER/t522 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeAllFieldsDetection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.RegexBoostProcessorTest.testTwoRules> $experiment_root/$TESTSUBJECT/outputs/$VER/t522 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.RegexBoostProcessorTest.testTwoRules $VER
 
 echo " running test 523"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeDetection> $experiment_root/$TESTSUBJECT/outputs/$VER/t523 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeDetection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeAllFieldsDetection> $experiment_root/$TESTSUBJECT/outputs/$VER/t523 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeAllFieldsDetection $VER
 
 echo " running test 524"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testMultiThreaded> $experiment_root/$TESTSUBJECT/outputs/$VER/t524 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testMultiThreaded $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeDetection> $experiment_root/$TESTSUBJECT/outputs/$VER/t524 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testDupeDetection $VER
 
 echo " running test 525"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonIndexedSignatureField> $experiment_root/$TESTSUBJECT/outputs/$VER/t525 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonIndexedSignatureField $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testMultiThreaded> $experiment_root/$TESTSUBJECT/outputs/$VER/t525 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testMultiThreaded $VER
 
 echo " running test 526"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testFailNonIndexedSigWithOverwriteDupes> $experiment_root/$TESTSUBJECT/outputs/$VER/t526 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testFailNonIndexedSigWithOverwriteDupes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonIndexedSignatureField> $experiment_root/$TESTSUBJECT/outputs/$VER/t526 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonIndexedSignatureField $VER
 
 echo " running test 527"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonStringFieldsValues> $experiment_root/$TESTSUBJECT/outputs/$VER/t527 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonStringFieldsValues $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testFailNonIndexedSigWithOverwriteDupes> $experiment_root/$TESTSUBJECT/outputs/$VER/t527 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testFailNonIndexedSigWithOverwriteDupes $VER
 
 echo " running test 528"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testProcessor> $experiment_root/$TESTSUBJECT/outputs/$VER/t528 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testProcessor $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonStringFieldsValues> $experiment_root/$TESTSUBJECT/outputs/$VER/t528 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.SignatureUpdateProcessorFactoryTest.testNonStringFieldsValues $VER
 
 echo " running test 529"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testNormalizations> $experiment_root/$TESTSUBJECT/outputs/$VER/t529 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testNormalizations $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testProcessor> $experiment_root/$TESTSUBJECT/outputs/$VER/t529 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testProcessor $VER
 
 echo " running test 530"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLength> $experiment_root/$TESTSUBJECT/outputs/$VER/t530 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLength $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testNormalizations> $experiment_root/$TESTSUBJECT/outputs/$VER/t530 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testNormalizations $VER
 
 echo " running test 531"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLevels> $experiment_root/$TESTSUBJECT/outputs/$VER/t531 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLevels $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLength> $experiment_root/$TESTSUBJECT/outputs/$VER/t531 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLength $VER
 
 echo " running test 532"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLandingPage> $experiment_root/$TESTSUBJECT/outputs/$VER/t532 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLandingPage $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLevels> $experiment_root/$TESTSUBJECT/outputs/$VER/t532 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLevels $VER
 
 echo " running test 533"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testTopLevelPage> $experiment_root/$TESTSUBJECT/outputs/$VER/t533 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testTopLevelPage $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testLandingPage> $experiment_root/$TESTSUBJECT/outputs/$VER/t533 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testLandingPage $VER
 
 echo " running test 534"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testCanonicalUrl> $experiment_root/$TESTSUBJECT/outputs/$VER/t534 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testCanonicalUrl $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testTopLevelPage> $experiment_root/$TESTSUBJECT/outputs/$VER/t534 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testTopLevelPage $VER
 
 echo " running test 535"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.UniqFieldsUpdateProcessorFactoryTest.testUniqFields> $experiment_root/$TESTSUBJECT/outputs/$VER/t535 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.UniqFieldsUpdateProcessorFactoryTest.testUniqFields $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.URLClassifyProcessorTest.testCanonicalUrl> $experiment_root/$TESTSUBJECT/outputs/$VER/t535 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.URLClassifyProcessorTest.testCanonicalUrl $VER
 
 echo " running test 536"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.TestPartialUpdateDeduplication.testPartialUpdates> $experiment_root/$TESTSUBJECT/outputs/$VER/t536 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.TestPartialUpdateDeduplication.testPartialUpdates $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.UniqFieldsUpdateProcessorFactoryTest.testUniqFields> $experiment_root/$TESTSUBJECT/outputs/$VER/t536 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.UniqFieldsUpdateProcessorFactoryTest.testUniqFields $VER
 
 echo " running test 537"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t537 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testSimple $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.TestPartialUpdateDeduplication.testPartialUpdates> $experiment_root/$TESTSUBJECT/outputs/$VER/t537 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.TestPartialUpdateDeduplication.testPartialUpdates $VER
 
 echo " running test 538"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testJson> $experiment_root/$TESTSUBJECT/outputs/$VER/t538 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testJson $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t538 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testSimple $VER
 
 echo " running test 539"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testRequireUniqueKey> $experiment_root/$TESTSUBJECT/outputs/$VER/t539 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testRequireUniqueKey $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testJson> $experiment_root/$TESTSUBJECT/outputs/$VER/t539 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.processor.PreAnalyzedUpdateProcessorTest.testJson $VER
 
 echo " running test 540"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testBasics> $experiment_root/$TESTSUBJECT/outputs/$VER/t540 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testBasics $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testRequireUniqueKey> $experiment_root/$TESTSUBJECT/outputs/$VER/t540 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testRequireUniqueKey $VER
 
 echo " running test 541"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testAddRollback> $experiment_root/$TESTSUBJECT/outputs/$VER/t541 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testAddRollback $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testBasics> $experiment_root/$TESTSUBJECT/outputs/$VER/t541 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testBasics $VER
 
 echo " running test 542"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testDeleteRollback> $experiment_root/$TESTSUBJECT/outputs/$VER/t542 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testDeleteRollback $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testAddRollback> $experiment_root/$TESTSUBJECT/outputs/$VER/t542 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testAddRollback $VER
 
 echo " running test 543"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testExpungeDeletes> $experiment_root/$TESTSUBJECT/outputs/$VER/t543 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testExpungeDeletes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testDeleteRollback> $experiment_root/$TESTSUBJECT/outputs/$VER/t543 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testDeleteRollback $VER
 
 echo " running test 544"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testPrepareCommit> $experiment_root/$TESTSUBJECT/outputs/$VER/t544 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testPrepareCommit $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testExpungeDeletes> $experiment_root/$TESTSUBJECT/outputs/$VER/t544 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testExpungeDeletes $VER
 
 echo " running test 545"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestDocumentBuilder.testDeepCopy> $experiment_root/$TESTSUBJECT/outputs/$VER/t545 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestDocumentBuilder.testDeepCopy $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.update.DirectUpdateHandlerTest.testPrepareCommit> $experiment_root/$TESTSUBJECT/outputs/$VER/t545 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.update.DirectUpdateHandlerTest.testPrepareCommit $VER
 
 echo " running test 546"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestJoin.testJoin> $experiment_root/$TESTSUBJECT/outputs/$VER/t546 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestJoin.testJoin $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestDocumentBuilder.testDeepCopy> $experiment_root/$TESTSUBJECT/outputs/$VER/t546 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestDocumentBuilder.testDeepCopy $VER
 
 echo " running test 547"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestJoin.testRandomJoin> $experiment_root/$TESTSUBJECT/outputs/$VER/t547 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestJoin.testRandomJoin $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestJoin.testJoin> $experiment_root/$TESTSUBJECT/outputs/$VER/t547 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestJoin.testJoin $VER
 
 echo " running test 548"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardAssignment> $experiment_root/$TESTSUBJECT/outputs/$VER/t548 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardAssignment $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestJoin.testRandomJoin> $experiment_root/$TESTSUBJECT/outputs/$VER/t548 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestJoin.testRandomJoin $VER
 
 echo " running test 549"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardAssignmentBigger> $experiment_root/$TESTSUBJECT/outputs/$VER/t549 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardAssignmentBigger $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardAssignment> $experiment_root/$TESTSUBJECT/outputs/$VER/t549 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardAssignment $VER
 
 echo " running test 550"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testStateChange> $experiment_root/$TESTSUBJECT/outputs/$VER/t550 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testStateChange $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardAssignmentBigger> $experiment_root/$TESTSUBJECT/outputs/$VER/t550 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardAssignmentBigger $VER
 
 echo " running test 551"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testOverseerFailure> $experiment_root/$TESTSUBJECT/outputs/$VER/t551 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testOverseerFailure $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testStateChange> $experiment_root/$TESTSUBJECT/outputs/$VER/t551 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testStateChange $VER
 
 echo " running test 552"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardLeaderChange> $experiment_root/$TESTSUBJECT/outputs/$VER/t552 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardLeaderChange $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testOverseerFailure> $experiment_root/$TESTSUBJECT/outputs/$VER/t552 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testOverseerFailure $VER
 
 echo " running test 553"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testDoubleAssignment> $experiment_root/$TESTSUBJECT/outputs/$VER/t553 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testDoubleAssignment $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testShardLeaderChange> $experiment_root/$TESTSUBJECT/outputs/$VER/t553 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testShardLeaderChange $VER
 
 echo " running test 554"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testPlaceholders> $experiment_root/$TESTSUBJECT/outputs/$VER/t554 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testPlaceholders $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testDoubleAssignment> $experiment_root/$TESTSUBJECT/outputs/$VER/t554 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testDoubleAssignment $VER
 
 echo " running test 555"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testReplay> $experiment_root/$TESTSUBJECT/outputs/$VER/t555 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testReplay $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testPlaceholders> $experiment_root/$TESTSUBJECT/outputs/$VER/t555 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testPlaceholders $VER
 
 echo " running test 556"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ClusterStateTest.testStoreAndRead> $experiment_root/$TESTSUBJECT/outputs/$VER/t556 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ClusterStateTest.testStoreAndRead $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerTest.testReplay> $experiment_root/$TESTSUBJECT/outputs/$VER/t556 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerTest.testReplay $VER
 
 echo " running test 557"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionIntegrationTest.testSimpleSliceLeaderElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t557 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionIntegrationTest.testSimpleSliceLeaderElection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ClusterStateTest.testStoreAndRead> $experiment_root/$TESTSUBJECT/outputs/$VER/t557 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ClusterStateTest.testStoreAndRead $VER
 
 echo " running test 558"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionIntegrationTest.testLeaderElectionAfterClientTimeout> $experiment_root/$TESTSUBJECT/outputs/$VER/t558 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionIntegrationTest.testLeaderElectionAfterClientTimeout $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionIntegrationTest.testSimpleSliceLeaderElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t558 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionIntegrationTest.testSimpleSliceLeaderElection $VER
 
 echo " running test 559"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestMultiCoreConfBootstrap.testMultiCoreConfBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t559 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestMultiCoreConfBootstrap.testMultiCoreConfBootstrap $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionIntegrationTest.testLeaderElectionAfterClientTimeout> $experiment_root/$TESTSUBJECT/outputs/$VER/t559 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionIntegrationTest.testLeaderElectionAfterClientTimeout $VER
 
 echo " running test 560"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ClusterStateUpdateTest.testCoreRegistration> $experiment_root/$TESTSUBJECT/outputs/$VER/t560 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ClusterStateUpdateTest.testCoreRegistration $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestMultiCoreConfBootstrap.testMultiCoreConfBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t560 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestMultiCoreConfBootstrap.testMultiCoreConfBootstrap $VER
 
 echo " running test 561"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.SliceStateTest.testDefaultSliceState> $experiment_root/$TESTSUBJECT/outputs/$VER/t561 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.SliceStateTest.testDefaultSliceState $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ClusterStateUpdateTest.testCoreRegistration> $experiment_root/$TESTSUBJECT/outputs/$VER/t561 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ClusterStateUpdateTest.testCoreRegistration $VER
 
 echo " running test 562"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkNodePropsTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t562 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkNodePropsTest.testBasic $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.SliceStateTest.testDefaultSliceState> $experiment_root/$TESTSUBJECT/outputs/$VER/t562 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.SliceStateTest.testDefaultSliceState $VER
 
 echo " running test 563"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t563 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNode $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkNodePropsTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t563 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkNodePropsTest.testBasic $VER
 
 echo " running test 564"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t564 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNode $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t564 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNode $VER
 
 echo " running test 565"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t565 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t565 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNode $VER
 
 echo " running test 566"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t566 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t566 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes $VER
 
 echo " running test 567"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t567 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t567 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendCreateNodesEqualToLiveNodes $VER
 
 echo " running test 568"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t568 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t568 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes $VER
 
 echo " running test 569"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationUnequalNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t569 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationUnequalNumberOfSlicesPerNode $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes> $experiment_root/$TESTSUBJECT/outputs/$VER/t569 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationEqualNumberOfSlicesPerNodeSendNullCreateNodes $VER
 
 echo " running test 570"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationUnequalNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t570 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationUnequalNumberOfSlicesPerNode $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationUnequalNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t570 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationUnequalNumberOfSlicesPerNode $VER
 
 echo " running test 571"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit> $experiment_root/$TESTSUBJECT/outputs/$VER/t571 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationUnequalNumberOfSlicesPerNode> $experiment_root/$TESTSUBJECT/outputs/$VER/t571 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationUnequalNumberOfSlicesPerNode $VER
 
 echo " running test 572"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit> $experiment_root/$TESTSUBJECT/outputs/$VER/t572 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit> $experiment_root/$TESTSUBJECT/outputs/$VER/t572 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit $VER
 
 echo " running test 573"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationLimitedNodesToCreateOn> $experiment_root/$TESTSUBJECT/outputs/$VER/t573 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationLimitedNodesToCreateOn $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit> $experiment_root/$TESTSUBJECT/outputs/$VER/t573 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeLimit $VER
 
 echo " running test 574"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationLimitedNodesToCreateOn> $experiment_root/$TESTSUBJECT/outputs/$VER/t574 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationLimitedNodesToCreateOn $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationLimitedNodesToCreateOn> $experiment_root/$TESTSUBJECT/outputs/$VER/t574 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationLimitedNodesToCreateOn $VER
 
 echo " running test 575"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits> $experiment_root/$TESTSUBJECT/outputs/$VER/t575 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationLimitedNodesToCreateOn> $experiment_root/$TESTSUBJECT/outputs/$VER/t575 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationLimitedNodesToCreateOn $VER
 
 echo " running test 576"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits> $experiment_root/$TESTSUBJECT/outputs/$VER/t576 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits> $experiment_root/$TESTSUBJECT/outputs/$VER/t576 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testNoReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits $VER
 
 echo " running test 577"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.SliceStateUpdateTest.testSliceStateUpdate> $experiment_root/$TESTSUBJECT/outputs/$VER/t577 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.SliceStateUpdateTest.testSliceStateUpdate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits> $experiment_root/$TESTSUBJECT/outputs/$VER/t577 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.OverseerCollectionProcessorTest.testReplicationCollectionNotCreatedDueToMaxShardsPerNodeAndNodesToCreateOnLimits $VER
 
 echo " running test 578"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.BasicZkTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t578 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.BasicZkTest.testBasic $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.SliceStateUpdateTest.testSliceStateUpdate> $experiment_root/$TESTSUBJECT/outputs/$VER/t578 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.SliceStateUpdateTest.testSliceStateUpdate $VER
 
 echo " running test 579"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t579 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testBasic $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.BasicZkTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t579 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.BasicZkTest.testBasic $VER
 
 echo " running test 580"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testCancelElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t580 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testCancelElection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testBasic> $experiment_root/$TESTSUBJECT/outputs/$VER/t580 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testBasic $VER
 
 echo " running test 581"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t581 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testElection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testCancelElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t581 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testCancelElection $VER
 
 echo " running test 582"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testStressElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t582 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testStressElection $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t582 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testElection $VER
 
 echo " running test 583"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testChrootBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t583 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testChrootBootstrap $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.LeaderElectionTest.testStressElection> $experiment_root/$TESTSUBJECT/outputs/$VER/t583 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.LeaderElectionTest.testStressElection $VER
 
 echo " running test 584"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testNoBootstrapConf> $experiment_root/$TESTSUBJECT/outputs/$VER/t584 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testNoBootstrapConf $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testChrootBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t584 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testChrootBootstrap $VER
 
 echo " running test 585"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testWithUploadDir> $experiment_root/$TESTSUBJECT/outputs/$VER/t585 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testWithUploadDir $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testNoBootstrapConf> $experiment_root/$TESTSUBJECT/outputs/$VER/t585 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testNoBootstrapConf $VER
 
 echo " running test 586"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testInitPathExists> $experiment_root/$TESTSUBJECT/outputs/$VER/t586 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testInitPathExists $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testWithUploadDir> $experiment_root/$TESTSUBJECT/outputs/$VER/t586 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testWithUploadDir $VER
 
 echo " running test 587"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t587 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testBootstrap $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.TestZkChroot.testInitPathExists> $experiment_root/$TESTSUBJECT/outputs/$VER/t587 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.TestZkChroot.testInitPathExists $VER
 
 echo " running test 588"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testBootstrapWithChroot> $experiment_root/$TESTSUBJECT/outputs/$VER/t588 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testBootstrapWithChroot $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testBootstrap> $experiment_root/$TESTSUBJECT/outputs/$VER/t588 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testBootstrap $VER
 
 echo " running test 589"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testMakePath> $experiment_root/$TESTSUBJECT/outputs/$VER/t589 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testMakePath $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testBootstrapWithChroot> $experiment_root/$TESTSUBJECT/outputs/$VER/t589 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testBootstrapWithChroot $VER
 
 echo " running test 590"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testList> $experiment_root/$TESTSUBJECT/outputs/$VER/t590 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testList $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testMakePath> $experiment_root/$TESTSUBJECT/outputs/$VER/t590 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testMakePath $VER
 
 echo " running test 591"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testUpConfigLinkConfigClearZk> $experiment_root/$TESTSUBJECT/outputs/$VER/t591 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testUpConfigLinkConfigClearZk $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testList> $experiment_root/$TESTSUBJECT/outputs/$VER/t591 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testList $VER
 
 echo " running test 592"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkControllerTest.testReadConfigName> $experiment_root/$TESTSUBJECT/outputs/$VER/t592 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkControllerTest.testReadConfigName $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkCLITest.testUpConfigLinkConfigClearZk> $experiment_root/$TESTSUBJECT/outputs/$VER/t592 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkCLITest.testUpConfigLinkConfigClearZk $VER
 
 echo " running test 593"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkControllerTest.testUploadToCloud> $experiment_root/$TESTSUBJECT/outputs/$VER/t593 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkControllerTest.testUploadToCloud $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkControllerTest.testReadConfigName> $experiment_root/$TESTSUBJECT/outputs/$VER/t593 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkControllerTest.testReadConfigName $VER
 
 echo " running test 594"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestRandomDVFaceting.testRandomFaceting> $experiment_root/$TESTSUBJECT/outputs/$VER/t594 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestRandomDVFaceting.testRandomFaceting $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.cloud.ZkControllerTest.testUploadToCloud> $experiment_root/$TESTSUBJECT/outputs/$VER/t594 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.cloud.ZkControllerTest.testUploadToCloud $VER
 
 echo " running test 595"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDoc> $experiment_root/$TESTSUBJECT/outputs/$VER/t595 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDoc $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.TestRandomDVFaceting.testRandomFaceting> $experiment_root/$TESTSUBJECT/outputs/$VER/t595 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.TestRandomDVFaceting.testRandomFaceting $VER
 
 echo " running test 596"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testRequestParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t596 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testRequestParams $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDoc> $experiment_root/$TESTSUBJECT/outputs/$VER/t596 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDoc $VER
 
 echo " running test 597"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testExternalEntities> $experiment_root/$TESTSUBJECT/outputs/$VER/t597 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testExternalEntities $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testRequestParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t597 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testRequestParams $VER
 
 echo " running test 598"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDelete> $experiment_root/$TESTSUBJECT/outputs/$VER/t598 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDelete $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testExternalEntities> $experiment_root/$TESTSUBJECT/outputs/$VER/t598 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testExternalEntities $VER
 
 echo " running test 599"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestDetails> $experiment_root/$TESTSUBJECT/outputs/$VER/t599 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestDetails $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDelete> $experiment_root/$TESTSUBJECT/outputs/$VER/t599 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XmlUpdateRequestHandlerTest.testReadDelete $VER
 
 echo " running test 600"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterWrite2Slave> $experiment_root/$TESTSUBJECT/outputs/$VER/t600 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterWrite2Slave $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestDetails> $experiment_root/$TESTSUBJECT/outputs/$VER/t600 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestDetails $VER
 
 echo " running test 601"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t601 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigReplication $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterWrite2Slave> $experiment_root/$TESTSUBJECT/outputs/$VER/t601 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterWrite2Slave $VER
 
 echo " running test 602"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestStopPoll> $experiment_root/$TESTSUBJECT/outputs/$VER/t602 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestStopPoll $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t602 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigReplication $VER
 
 echo " running test 603"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestSnapPullWithMasterUrl> $experiment_root/$TESTSUBJECT/outputs/$VER/t603 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestSnapPullWithMasterUrl $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestStopPoll> $experiment_root/$TESTSUBJECT/outputs/$VER/t603 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestStopPoll $VER
 
 echo " running test 604"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestStressReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t604 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestStressReplication $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestSnapPullWithMasterUrl> $experiment_root/$TESTSUBJECT/outputs/$VER/t604 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestSnapPullWithMasterUrl $VER
 
 echo " running test 605"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestRepeater> $experiment_root/$TESTSUBJECT/outputs/$VER/t605 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestRepeater $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestStressReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t605 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestStressReplication $VER
 
 echo " running test 606"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartup> $experiment_root/$TESTSUBJECT/outputs/$VER/t606 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartup $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestRepeater> $experiment_root/$TESTSUBJECT/outputs/$VER/t606 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestRepeater $VER
 
 echo " running test 607"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartupWithNoActivity> $experiment_root/$TESTSUBJECT/outputs/$VER/t607 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartupWithNoActivity $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartup> $experiment_root/$TESTSUBJECT/outputs/$VER/t607 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartup $VER
 
 echo " running test 608"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterCoreReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t608 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterCoreReload $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartupWithNoActivity> $experiment_root/$TESTSUBJECT/outputs/$VER/t608 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterStartupWithNoActivity $VER
 
 echo " running test 609"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigAliasReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t609 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigAliasReplication $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterCoreReload> $experiment_root/$TESTSUBJECT/outputs/$VER/t609 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestReplicateAfterCoreReload $VER
 
 echo " running test 610"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestBackup> $experiment_root/$TESTSUBJECT/outputs/$VER/t610 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestBackup $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigAliasReplication> $experiment_root/$TESTSUBJECT/outputs/$VER/t610 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestIndexAndConfigAliasReplication $VER
 
 echo " running test 611"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testResolveAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t611 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testResolveAnalysisRequest $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestReplicationHandler.doTestBackup> $experiment_root/$TESTSUBJECT/outputs/$VER/t611 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestReplicationHandler.doTestBackup $VER
 
 echo " running test 612"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetInDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t612 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetInDocument $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testResolveAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t612 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testResolveAnalysisRequest $VER
 
 echo " running test 613"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetOutsideDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t613 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetOutsideDocument $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetInDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t613 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetInDocument $VER
 
 echo " running test 614"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testHandleAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t614 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testHandleAnalysisRequest $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetOutsideDocument> $experiment_root/$TESTSUBJECT/outputs/$VER/t614 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testCharsetOutsideDocument $VER
 
 echo " running test 615"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testNullValues> $experiment_root/$TESTSUBJECT/outputs/$VER/t615 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testNullValues $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testHandleAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t615 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.DocumentAnalysisRequestHandlerTest.testHandleAnalysisRequest $VER
 
 echo " running test 616"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testDeleteSyntax> $experiment_root/$TESTSUBJECT/outputs/$VER/t616 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testDeleteSyntax $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testNullValues> $experiment_root/$TESTSUBJECT/outputs/$VER/t616 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testNullValues $VER
 
 echo " running test 617"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.BinaryUpdateRequestHandlerTest.testRequestParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t617 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.BinaryUpdateRequestHandlerTest.testRequestParams $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testBooleanValuesInAdd> $experiment_root/$TESTSUBJECT/outputs/$VER/t617 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testBooleanValuesInAdd $VER
 
 echo " running test 618"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.CoreAdminHandlerTest.testCoreAdminHandler> $experiment_root/$TESTSUBJECT/outputs/$VER/t618 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.CoreAdminHandlerTest.testCoreAdminHandler $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testIntegerValuesInAdd> $experiment_root/$TESTSUBJECT/outputs/$VER/t618 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testIntegerValuesInAdd $VER
 
 echo " running test 619"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.MBeansHandlerTest.testDiff> $experiment_root/$TESTSUBJECT/outputs/$VER/t619 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.MBeansHandlerTest.testDiff $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testDecimalValuesInAdd> $experiment_root/$TESTSUBJECT/outputs/$VER/t619 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testDecimalValuesInAdd $VER
 
 echo " running test 620"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LoggingHandlerTest.testLogLevelHandlerOutput> $experiment_root/$TESTSUBJECT/outputs/$VER/t620 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LoggingHandlerTest.testLogLevelHandlerOutput $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testBigDecimalValuesInAdd> $experiment_root/$TESTSUBJECT/outputs/$VER/t620 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testBigDecimalValuesInAdd $VER
 
 echo " running test 621"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testHistogramBucket> $experiment_root/$TESTSUBJECT/outputs/$VER/t621 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testHistogramBucket $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testBigIntegerValuesInAdd> $experiment_root/$TESTSUBJECT/outputs/$VER/t621 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testBigIntegerValuesInAdd $VER
 
 echo " running test 622"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testLuke> $experiment_root/$TESTSUBJECT/outputs/$VER/t622 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testLuke $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testAddNonStringValues> $experiment_root/$TESTSUBJECT/outputs/$VER/t622 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testAddNonStringValues $VER
 
 echo " running test 623"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testFlParam> $experiment_root/$TESTSUBJECT/outputs/$VER/t623 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testFlParam $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testAddBigIntegerValueToTrieField> $experiment_root/$TESTSUBJECT/outputs/$VER/t623 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testAddBigIntegerValueToTrieField $VER
 
 echo " running test 624"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCSVLoad> $experiment_root/$TESTSUBJECT/outputs/$VER/t624 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCSVLoad $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testAddBigDecimalValueToTrieField> $experiment_root/$TESTSUBJECT/outputs/$VER/t624 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testAddBigDecimalValueToTrieField $VER
 
 echo " running test 625"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCommitFalse> $experiment_root/$TESTSUBJECT/outputs/$VER/t625 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCommitFalse $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.JsonLoaderTest.testDeleteSyntax> $experiment_root/$TESTSUBJECT/outputs/$VER/t625 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.JsonLoaderTest.testDeleteSyntax $VER
 
 echo " running test 626"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCommitTrue> $experiment_root/$TESTSUBJECT/outputs/$VER/t626 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCommitTrue $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.BinaryUpdateRequestHandlerTest.testRequestParams> $experiment_root/$TESTSUBJECT/outputs/$VER/t626 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.BinaryUpdateRequestHandlerTest.testRequestParams $VER
 
 echo " running test 627"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testLiteral> $experiment_root/$TESTSUBJECT/outputs/$VER/t627 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testLiteral $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.CoreAdminHandlerTest.testCoreAdminHandler> $experiment_root/$TESTSUBJECT/outputs/$VER/t627 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.CoreAdminHandlerTest.testCoreAdminHandler $VER
 
 echo " running test 628"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCSV> $experiment_root/$TESTSUBJECT/outputs/$VER/t628 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCSV $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.MBeansHandlerTest.testDiff> $experiment_root/$TESTSUBJECT/outputs/$VER/t628 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.MBeansHandlerTest.testDiff $VER
 
 echo " running test 629"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testResolveAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t629 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testResolveAnalysisRequest $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LoggingHandlerTest.testLogLevelHandlerOutput> $experiment_root/$TESTSUBJECT/outputs/$VER/t629 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LoggingHandlerTest.testLogLevelHandlerOutput $VER
 
 echo " running test 630"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testHandleAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t630 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testHandleAnalysisRequest $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testHistogramBucket> $experiment_root/$TESTSUBJECT/outputs/$VER/t630 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testHistogramBucket $VER
 
 echo " running test 631"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testCharFilterAnalysis> $experiment_root/$TESTSUBJECT/outputs/$VER/t631 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testCharFilterAnalysis $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testLuke> $experiment_root/$TESTSUBJECT/outputs/$VER/t631 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testLuke $VER
 
 echo " running test 632"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testPositionHistoryWithWDF> $experiment_root/$TESTSUBJECT/outputs/$VER/t632 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testPositionHistoryWithWDF $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.admin.LukeRequestHandlerTest.testFlParam> $experiment_root/$TESTSUBJECT/outputs/$VER/t632 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.admin.LukeRequestHandlerTest.testFlParam $VER
 
 echo " running test 633"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XsltUpdateRequestHandlerTest.testUpdate> $experiment_root/$TESTSUBJECT/outputs/$VER/t633 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XsltUpdateRequestHandlerTest.testUpdate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCSVLoad> $experiment_root/$TESTSUBJECT/outputs/$VER/t633 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCSVLoad $VER
 
 echo " running test 634"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XsltUpdateRequestHandlerTest.testEntities> $experiment_root/$TESTSUBJECT/outputs/$VER/t634 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XsltUpdateRequestHandlerTest.testEntities $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCommitFalse> $experiment_root/$TESTSUBJECT/outputs/$VER/t634 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCommitFalse $VER
 
 echo " running test 635"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.DebugComponentTest.testBasicInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t635 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.DebugComponentTest.testBasicInterface $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCommitTrue> $experiment_root/$TESTSUBJECT/outputs/$VER/t635 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCommitTrue $VER
 
 echo " running test 636"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.DebugComponentTest.testPerItemInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t636 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.DebugComponentTest.testPerItemInterface $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testLiteral> $experiment_root/$TESTSUBJECT/outputs/$VER/t636 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testLiteral $VER
 
 echo " running test 637"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t637 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testFieldType $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.TestCSVLoader.testCSV> $experiment_root/$TESTSUBJECT/outputs/$VER/t637 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.TestCSVLoader.testCSV $VER
 
 echo " running test 638"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testTrieFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t638 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testTrieFieldType $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testResolveAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t638 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testResolveAnalysisRequest $VER
 
 echo " running test 639"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t639 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testInterface $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testHandleAnalysisRequest> $experiment_root/$TESTSUBJECT/outputs/$VER/t639 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testHandleAnalysisRequest $VER
 
 echo " running test 640"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testMarker> $experiment_root/$TESTSUBJECT/outputs/$VER/t640 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testMarker $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testCharFilterAnalysis> $experiment_root/$TESTSUBJECT/outputs/$VER/t640 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testCharFilterAnalysis $VER
 
 echo " running test 641"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testMarkExcludes> $experiment_root/$TESTSUBJECT/outputs/$VER/t641 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testMarkExcludes $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testPositionHistoryWithWDF> $experiment_root/$TESTSUBJECT/outputs/$VER/t641 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.FieldAnalysisRequestHandlerTest.testPositionHistoryWithWDF $VER
 
 echo " running test 642"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testSorting> $experiment_root/$TESTSUBJECT/outputs/$VER/t642 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testSorting $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XsltUpdateRequestHandlerTest.testUpdate> $experiment_root/$TESTSUBJECT/outputs/$VER/t642 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XsltUpdateRequestHandlerTest.testUpdate $VER
 
 echo " running test 643"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testElevationReloading> $experiment_root/$TESTSUBJECT/outputs/$VER/t643 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testElevationReloading $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.XsltUpdateRequestHandlerTest.testEntities> $experiment_root/$TESTSUBJECT/outputs/$VER/t643 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.XsltUpdateRequestHandlerTest.testEntities $VER
 
 echo " running test 644"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testBasics> $experiment_root/$TESTSUBJECT/outputs/$VER/t644 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testBasics $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.DebugComponentTest.testBasicInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t644 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.DebugComponentTest.testBasicInterface $VER
 
 echo " running test 645"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testOptions> $experiment_root/$TESTSUBJECT/outputs/$VER/t645 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testOptions $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.DebugComponentTest.testPerItemInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t645 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.DebugComponentTest.testPerItemInterface $VER
 
 echo " running test 646"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testPerField> $experiment_root/$TESTSUBJECT/outputs/$VER/t646 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testPerField $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t646 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testFieldType $VER
 
 echo " running test 647"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testEmptyLower> $experiment_root/$TESTSUBJECT/outputs/$VER/t647 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testEmptyLower $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testTrieFieldType> $experiment_root/$TESTSUBJECT/outputs/$VER/t647 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testTrieFieldType $VER
 
 echo " running test 648"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testMultipleFields> $experiment_root/$TESTSUBJECT/outputs/$VER/t648 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testMultipleFields $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t648 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testInterface $VER
 
 echo " running test 649"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testUnlimitedRows> $experiment_root/$TESTSUBJECT/outputs/$VER/t649 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testUnlimitedRows $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testMarker> $experiment_root/$TESTSUBJECT/outputs/$VER/t649 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testMarker $VER
 
 echo " running test 650"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testPrefix> $experiment_root/$TESTSUBJECT/outputs/$VER/t650 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testPrefix $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testMarkExcludes> $experiment_root/$TESTSUBJECT/outputs/$VER/t650 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testMarkExcludes $VER
 
 echo " running test 651"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexp> $experiment_root/$TESTSUBJECT/outputs/$VER/t651 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexp $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testSorting> $experiment_root/$TESTSUBJECT/outputs/$VER/t651 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testSorting $VER
 
 echo " running test 652"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexpFlagParsing> $experiment_root/$TESTSUBJECT/outputs/$VER/t652 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexpFlagParsing $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.QueryElevationComponentTest.testElevationReloading> $experiment_root/$TESTSUBJECT/outputs/$VER/t652 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.QueryElevationComponentTest.testElevationReloading $VER
 
 echo " running test 653"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexpWithFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t653 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexpWithFlags $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testBasics> $experiment_root/$TESTSUBJECT/outputs/$VER/t653 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testBasics $VER
 
 echo " running test 654"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testSortCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t654 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testSortCount $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testOptions> $experiment_root/$TESTSUBJECT/outputs/$VER/t654 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testOptions $VER
 
 echo " running test 655"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testSortIndex> $experiment_root/$TESTSUBJECT/outputs/$VER/t655 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testSortIndex $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermVectorComponentTest.testPerField> $experiment_root/$TESTSUBJECT/outputs/$VER/t655 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermVectorComponentTest.testPerField $VER
 
 echo " running test 656"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testPastUpper> $experiment_root/$TESTSUBJECT/outputs/$VER/t656 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testPastUpper $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testEmptyLower> $experiment_root/$TESTSUBJECT/outputs/$VER/t656 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testEmptyLower $VER
 
 echo " running test 657"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testLowerExclusive> $experiment_root/$TESTSUBJECT/outputs/$VER/t657 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testLowerExclusive $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testMultipleFields> $experiment_root/$TESTSUBJECT/outputs/$VER/t657 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testMultipleFields $VER
 
 echo " running test 658"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t658 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.test $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testUnlimitedRows> $experiment_root/$TESTSUBJECT/outputs/$VER/t658 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testUnlimitedRows $VER
 
 echo " running test 659"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testMinMaxFreq> $experiment_root/$TESTSUBJECT/outputs/$VER/t659 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testMinMaxFreq $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testPrefix> $experiment_root/$TESTSUBJECT/outputs/$VER/t659 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testPrefix $VER
 
 echo " running test 660"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.BadComponentTest.testBadElevate> $experiment_root/$TESTSUBJECT/outputs/$VER/t660 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.BadComponentTest.testBadElevate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexp> $experiment_root/$TESTSUBJECT/outputs/$VER/t660 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexp $VER
 
 echo " running test 661"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testToLogIds> $experiment_root/$TESTSUBJECT/outputs/$VER/t661 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testToLogIds $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexpFlagParsing> $experiment_root/$TESTSUBJECT/outputs/$VER/t661 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexpFlagParsing $VER
 
 echo " running test 662"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testToLogScores> $experiment_root/$TESTSUBJECT/outputs/$VER/t662 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testToLogScores $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testRegexpWithFlags> $experiment_root/$TESTSUBJECT/outputs/$VER/t662 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testRegexpWithFlags $VER
 
 echo " running test 663"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testDisabling> $experiment_root/$TESTSUBJECT/outputs/$VER/t663 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testDisabling $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testSortCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t663 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testSortCount $VER
 
 echo " running test 664"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testExtendedResultsCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t664 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testExtendedResultsCount $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testSortIndex> $experiment_root/$TESTSUBJECT/outputs/$VER/t664 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testSortIndex $VER
 
 echo " running test 665"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t665 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.test $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testPastUpper> $experiment_root/$TESTSUBJECT/outputs/$VER/t665 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testPastUpper $VER
 
 echo " running test 666"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testPerDictionary> $experiment_root/$TESTSUBJECT/outputs/$VER/t666 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testPerDictionary $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testLowerExclusive> $experiment_root/$TESTSUBJECT/outputs/$VER/t666 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testLowerExclusive $VER
 
 echo " running test 667"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t667 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testCollate $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t667 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.test $VER
 
 echo " running test 668"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testCorrectSpelling> $experiment_root/$TESTSUBJECT/outputs/$VER/t668 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testCorrectSpelling $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.TermsComponentTest.testMinMaxFreq> $experiment_root/$TESTSUBJECT/outputs/$VER/t668 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.TermsComponentTest.testMinMaxFreq $VER
 
 echo " running test 669"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testRelativeIndexDirLocation> $experiment_root/$TESTSUBJECT/outputs/$VER/t669 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testRelativeIndexDirLocation $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.BadComponentTest.testBadElevate> $experiment_root/$TESTSUBJECT/outputs/$VER/t669 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.BadComponentTest.testBadElevate $VER
 
 echo " running test 670"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testReloadOnStart> $experiment_root/$TESTSUBJECT/outputs/$VER/t670 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testReloadOnStart $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testToLogIds> $experiment_root/$TESTSUBJECT/outputs/$VER/t670 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testToLogIds $VER
 
 echo " running test 671"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testRebuildOnCommit> $experiment_root/$TESTSUBJECT/outputs/$VER/t671 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testRebuildOnCommit $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testToLogScores> $experiment_root/$TESTSUBJECT/outputs/$VER/t671 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testToLogScores $VER
 
 echo " running test 672"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testThresholdTokenFrequency> $experiment_root/$TESTSUBJECT/outputs/$VER/t672 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testThresholdTokenFrequency $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.ResponseLogComponentTest.testDisabling> $experiment_root/$TESTSUBJECT/outputs/$VER/t672 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.ResponseLogComponentTest.testDisabling $VER
 
 echo " running test 673"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SearchHandlerTest.testInitalization> $experiment_root/$TESTSUBJECT/outputs/$VER/t673 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SearchHandlerTest.testInitalization $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testExtendedResultsCount> $experiment_root/$TESTSUBJECT/outputs/$VER/t673 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testExtendedResultsCount $VER
 
 echo " running test 674"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.MoreLikeThisHandlerTest.testInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t674 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.MoreLikeThisHandlerTest.testInterface $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.test> $experiment_root/$TESTSUBJECT/outputs/$VER/t674 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.test $VER
 
 echo " running test 675"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.CSVRequestHandlerTest.testCommitWithin> $experiment_root/$TESTSUBJECT/outputs/$VER/t675 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.CSVRequestHandlerTest.testCommitWithin $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testPerDictionary> $experiment_root/$TESTSUBJECT/outputs/$VER/t675 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testPerDictionary $VER
 
 echo " running test 676"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SampleTest.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t676 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SampleTest.testSimple $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testCollate> $experiment_root/$TESTSUBJECT/outputs/$VER/t676 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testCollate $VER
 
 echo " running test 677"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SampleTest.testAdvanced> $experiment_root/$TESTSUBJECT/outputs/$VER/t677 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SampleTest.testAdvanced $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testCorrectSpelling> $experiment_root/$TESTSUBJECT/outputs/$VER/t677 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testCorrectSpelling $VER
 
 echo " running test 678"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.DisMaxRequestHandlerTest.testSomeStuff> $experiment_root/$TESTSUBJECT/outputs/$VER/t678 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.DisMaxRequestHandlerTest.testSomeStuff $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testRelativeIndexDirLocation> $experiment_root/$TESTSUBJECT/outputs/$VER/t678 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testRelativeIndexDirLocation $VER
 
 echo " running test 679"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.DisMaxRequestHandlerTest.testExtraBlankBQ> $experiment_root/$TESTSUBJECT/outputs/$VER/t679 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.DisMaxRequestHandlerTest.testExtraBlankBQ $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testReloadOnStart> $experiment_root/$TESTSUBJECT/outputs/$VER/t679 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testReloadOnStart $VER
 
 echo " running test 680"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testSimpleQueries> $experiment_root/$TESTSUBJECT/outputs/$VER/t680 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.MinimalSchemaTest.testSimpleQueries $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testRebuildOnCommit> $experiment_root/$TESTSUBJECT/outputs/$VER/t680 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testRebuildOnCommit $VER
 
 echo " running test 681"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testLuke> $experiment_root/$TESTSUBJECT/outputs/$VER/t681 2>&1
-$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.MinimalSchemaTest.testLuke $VER
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SpellCheckComponentTest.testThresholdTokenFrequency> $experiment_root/$TESTSUBJECT/outputs/$VER/t681 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SpellCheckComponentTest.testThresholdTokenFrequency $VER
 
 echo " running test 682"
-java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testAllConfiguredHandlers> $experiment_root/$TESTSUBJECT/outputs/$VER/t682 2>&1
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.component.SearchHandlerTest.testInitalization> $experiment_root/$TESTSUBJECT/outputs/$VER/t682 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.component.SearchHandlerTest.testInitalization $VER
+
+echo " running test 683"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.MoreLikeThisHandlerTest.testInterface> $experiment_root/$TESTSUBJECT/outputs/$VER/t683 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.MoreLikeThisHandlerTest.testInterface $VER
+
+echo " running test 684"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.handler.CSVRequestHandlerTest.testCommitWithin> $experiment_root/$TESTSUBJECT/outputs/$VER/t684 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.handler.CSVRequestHandlerTest.testCommitWithin $VER
+
+echo " running test 685"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SampleTest.testSimple> $experiment_root/$TESTSUBJECT/outputs/$VER/t685 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SampleTest.testSimple $VER
+
+echo " running test 686"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.SampleTest.testAdvanced> $experiment_root/$TESTSUBJECT/outputs/$VER/t686 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.SampleTest.testAdvanced $VER
+
+echo " running test 687"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.DisMaxRequestHandlerTest.testSomeStuff> $experiment_root/$TESTSUBJECT/outputs/$VER/t687 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.DisMaxRequestHandlerTest.testSomeStuff $VER
+
+echo " running test 688"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.DisMaxRequestHandlerTest.testExtraBlankBQ> $experiment_root/$TESTSUBJECT/outputs/$VER/t688 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.DisMaxRequestHandlerTest.testExtraBlankBQ $VER
+
+echo " running test 689"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testSimpleQueries> $experiment_root/$TESTSUBJECT/outputs/$VER/t689 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.MinimalSchemaTest.testSimpleQueries $VER
+
+echo " running test 690"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testLuke> $experiment_root/$TESTSUBJECT/outputs/$VER/t690 2>&1
+$experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.MinimalSchemaTest.testLuke $VER
+
+echo " running test 691"
+java -enableassertions -javaagent:/home/wliu/java/jacoco/jacocoagent.jar=excludes=$EXCLUDEDCLASSES SingleJUnitTestRunner org.apache.solr.MinimalSchemaTest.testAllConfiguredHandlers> $experiment_root/$TESTSUBJECT/outputs/$VER/t691 2>&1
 $experiment_root/$TESTSUBJECT/scripts/TestScripts/jacoco.sh org.apache.solr.MinimalSchemaTest.testAllConfiguredHandlers $VER
 

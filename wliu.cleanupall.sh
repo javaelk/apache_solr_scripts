@@ -18,3 +18,4 @@ rm -rf $HOME/sir/workspace/apache-solr/*
 
 #echo " clean up test plan and test execution scripts" 
 
+
