@@ -54,7 +54,7 @@ do
 	if [ "$LASTVERSION" != 0 ]
              then 
              echo "5.1 === compare version $LASTVERSION with $VER"
-		diff_result=` diff --ignore-case --ignore-all-space --ignore-blank-lines --recursive --brief trunk-$LASTVERSION/core/src/java trunk-$VER/core/src/java `
+		diff_result=` diff --ignore-case --ignore-all-space --ignore-blank-lines --recursive --brief --exclude='.svn' trunk-$LASTVERSION/core/src/java trunk-$VER/core/src/java `
 
 		if [ -z "$diff_result" ]
                      then  #empty means they are the same  
