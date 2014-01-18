@@ -137,9 +137,9 @@ do
 	cp -r build/solr-core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/classes
 
 	echo " copy source - only copy source of core" 
-        #need to exclude .svn 
-	cp -r core $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src
- 
+	tar cvf core.tar --exclude='.svn' core >/dev/null 2>&1
+	tar xvf core.tar -C $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src >/dev/null 2>&1
+
 	echo " libs will not be copied. test scripts are run directly in SVN local directories"
 
 	cd ..

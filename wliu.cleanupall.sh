@@ -16,6 +16,8 @@ rm ${experiment_root}/$TESTSUBJECT/changes/*
 echo "clean up SVNLOCAL"
 rm -rf $SVNLOCAL/*
 
+rm $experiment_root/$TESTSUBJECT/scripts/deploy.log
+
 #echo " clean up test plan and test execution scripts" 
 
 
