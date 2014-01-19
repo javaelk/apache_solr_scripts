@@ -12,6 +12,7 @@ java1_7=$HOME/java/jdk1.7.0_51
 
 export experiment_root=/media/data/wliu/sir
 export JAVA_HOME=$java1_6
+export CLASSPATH=.
 
 echo " this script fetches source from SVN, build and deploy to sir versions.alt directory"
 echo " versions has no code change in solr-core will not be deployed to sir versions.alt "
@@ -30,7 +31,7 @@ if $SVNCHECKOUT; then
 	echo "2 === extract version numbers "
 
 	#remove --limit 5 later to see all.  -r 1487914:1491470 
-	svn log --limit 5 | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../snapshot_build_hashcode.txt
+	svn log --limit 10 | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../snapshot_build_hashcode.txt
 	cd ..
 
 fi
@@ -84,14 +85,6 @@ do
 	if $SVNCHECKOUT; then
 #change this later to build differently for each major revisions and use different java versions.
         export JAVA_HOME=$java1_7
-        build_result=` ant ivy-bootstrap |grep "BUILD SUCCESSFUL" `
-         if [ -z "$build_result" ] 
-             then 
-               echo "ant ivy-bootstrap BUILD $VER failed" 
-               exit
-         fi
-         echo "ant ivy-bootstrap $VER $build_result" 
-
         build_result=` ant compile |grep "BUILD SUCCESSFUL" `
          if [ -z "$build_result" ] 
              then 
@@ -112,7 +105,7 @@ do
          if [ -z "$build_result" ] 
              then 
                echo " ant test BUILD $VER failed" 
-         #exit - do not exit even when ant test failed , this is just to compile the tests 
+         #exit - do not exit even when ant test failed 
          fi
          echo "ant test $VER $build_result" 
 
