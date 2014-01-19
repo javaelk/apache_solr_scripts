@@ -4,11 +4,14 @@ TESTSUBJECT_ALT="apache-solr-core-snapshots"
 SVNLOCAL="/media/svn/svn-apache"
 SVNNAME="solr"
 SVNCHECKOUT=true #set to false when no connection to SVN
+ENABLETEST=false #set to false to skip ant test- takes long time and many failed
 LOGLOCATION="$HOME/sir/workspace/log"
 java1_5=$HOME/java/jdk1.5.0_22
 java1_6=$HOME/java/jdk1.6.0_45
 java1_7=$HOME/java/jdk1.7.0_51
-
+ant1_8_2=$HOME/java/apache-ant-1.8.2
+ant1_7_1=$HOME/java/apache-ant-1.7.1
+ant1_7_0=$HOME/java/apache-ant-1.7.0
 
 export experiment_root=/media/data/wliu/sir
 export JAVA_HOME=$java1_6
@@ -83,8 +86,31 @@ do
 
 	echo " 6 === build" 
 	if $SVNCHECKOUT; then
-#change this later to build differently for each major revisions and use different java versions.
-        export JAVA_HOME=$java1_7
+        
+        #each major revisions and use different java versions.
+	if [ $VER -ge 1457734 ]
+	then
+	    export JAVA_HOME=$java1_7
+	elif [ $VER -ge  1198039 ]
+	then 
+	    export JAVA_HOME=$java1_6
+	else 
+	    export JAVA_HOME=$java1_5
+	fi  
+        echo $JAVA_HOME
+
+        #each major revisions and use different ant versions.
+	if [ $VER -ge 1331284 ]
+	then
+	    export ANT_HOME=$ant1_8_2
+	elif [ $VER -ge 1138821 ]
+	then 
+	    export ANT_HOME=$ant1_7_1
+	else 
+	    export ANT_HOME=$ant1_7_0
+	fi
+        echo $ANT_HOME
+
         build_result=` ant compile |grep "BUILD SUCCESSFUL" `
          if [ -z "$build_result" ] 
              then 
@@ -101,13 +127,15 @@ do
          fi
          echo "ant compile-test $VER $build_result" 
 	 
-	 build_result=` ant test |grep "BUILD SUCCESSFUL" `
-         if [ -z "$build_result" ] 
-             then 
-               echo " ant test BUILD $VER failed" 
-         #exit - do not exit even when ant test failed 
-         fi
-         echo "ant test $VER $build_result" 
+         if $ENABLETEST; then
+		 build_result=` ant test |grep "BUILD SUCCESSFUL" `
+		 if [ -z "$build_result" ] 
+		     then 
+		       echo " ant test BUILD $VER failed" 
+		 #exit - do not exit even when ant test failed 
+		 fi
+		 echo "ant test $VER $build_result" 
+        fi
 
         build_result=` ant dist |grep "BUILD SUCCESSFUL" `
          if [ -z "$build_result" ] 
