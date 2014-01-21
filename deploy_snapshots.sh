@@ -29,7 +29,7 @@ cd trunk/solr
 echo "2 === extract version numbers "
 
 #remove --limit 5 later to see all.  -r 1487914:1491470 
-svn log --limit 1000 | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../../snapshot_build_hashcode.txt
+svn log --limit 2 | grep "^r[0-9]* |" | sed 's/^r\([0-9]*\).*$/\1/' > ../../snapshot_build_hashcode.txt
 
 cd $SVNLOCAL   
 #b is total number of versions
@@ -136,11 +136,22 @@ do
 	tar cvf core.tar --exclude='.svn' core >/dev/null 2>&1
 	tar xvf core.tar -C $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src >/dev/null 2>&1
 
-	echo " libs will not be copied. test scripts are run directly in SVN local directories"
+#libs will not be copied. test scripts are run directly in SVN local directories"
 
 	cd $SVNLOCAL
 
-#TODO: ideally, generate test plan, run test scripts right here and run it in the loop.
+echo "8 == generate test plan "
+export JAVA_HOME=$java1_7
+TEMPPATH="$HOME/sir/$TESTSUBJECT/scripts/artsTestPlanGenerator.jar:$HOME/git/ARTS/lib/*"
+mkdir $HOME/sir/$TESTSUBJECT/testplans.alt/v$b
+
+$JAVA_HOME/bin/java -cp $TEMPPATH uw.star.rts.testsubject.sir_java.TestPlanGenerator $HOME/sir/$TESTSUBJECT/versions.alt/orig/v$b/$TESTSUBJECT_ALT/build/src/core/src/test > $HOME/sir/$TESTSUBJECT/testplans.alt/v$b/v$b.class.junit.universe.all
+
+echo "9 == generate test script "
+echo "10 == run tests "
+
+
+
 	LASTVERSION=$VER
 done < snapshot_build_hashcode.txt
 
